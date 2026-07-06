@@ -1,5 +1,5 @@
 {
-  "_comment": "Static rotation table for Zapier-based Pinterest auto-pinner. Index = day-of-year % len(pins) (deterministic, no state file needed). Images hosted publicly in this same midwestmade4u-pins repo. MIRRORED HERE (public repo) on 2026-07-03 because the private midwestmade4u-shop copy requires an auth token on every raw.githubusercontent.com fetch, which scheduled tasks cannot supply -- this public copy is the primary source SKILL.md fetches from. Keep in sync with midwestmade4u-shop/tracking/pinterest_zapier_pins.json (editorial source of truth) whenever a pin is added. Bundle pins (021-027) point to a dedicated 'Disney Trip Planning Bundles' board (id 1078612248196086848) as of 2026-07-03.",
+  "_comment": "Static rotation table for Zapier-based Pinterest auto-pinner. Index = day-of-year % len(pins) (deterministic, no state file needed). Images hosted publicly in this same midwestmade4u-pins repo. MIRRORED HERE (public repo) on 2026-07-03 because the private midwestmade4u-shop copy requires an auth token on every raw.githubusercontent.com fetch, which scheduled tasks cannot supply -- this public copy is the primary source SKILL.md fetches from. Keep in sync with midwestmade4u-shop/tracking/pinterest_zapier_pins.json (editorial source of truth) whenever a pin is added. Bundle pins (021-027) point to a dedicated 'Disney Trip Planning Bundles' board (id 1078612248196086848) as of 2026-07-03. New-products batch (028-033) added 2026-07-05.",
   "shop_url": "https://www.etsy.com/shop/MidwestMade4U",
   "repo_raw_base": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/",
   "pins": [
@@ -221,6 +221,54 @@
       "board_id": "1078612248196086848",
       "price": "$14.99",
       "listing_url": "https://www.etsy.com/listing/4532055249"
+    },
+    {
+      "file": "pin_028_complete_disney_world_vacation_planner.jpg",
+      "title": "Complete Disney World Vacation Planner | 60+ Templates",
+      "bonus": "Every planning tool in one bundle -- itinerary, packing, budget, dining, park guides -- save 70% vs. buying separately",
+      "board_id": "1078612248196086848",
+      "price": "$34.99",
+      "listing_url": "https://www.etsy.com/listing/4533164365"
+    },
+    {
+      "file": "pin_029_disney_cruise_planner.jpg",
+      "title": "Disney Cruise Planner | 4 Printable Templates",
+      "bonus": "Port Day Itinerary, Onboard Activities, Dining Log, Packing Checklist -- save 58%",
+      "board_id": "1078612248196086848",
+      "price": "$14.99",
+      "listing_url": "https://www.etsy.com/listing/4533164619"
+    },
+    {
+      "file": "pin_030_disney_kids_road_trip_activity_book.jpg",
+      "title": "Disney Kids Road Trip Activity Book | Printable PDF",
+      "bonus": "Bingo Game, Travel Journal, Drawing Prompts -- ages 4-8",
+      "board_id": "1078612248196057244",
+      "price": "$8.99",
+      "listing_url": "https://www.etsy.com/listing/4533178032"
+    },
+    {
+      "file": "pin_031_disney_first_timers_guide_cheat_sheet.jpg",
+      "title": "Disney First Timer's Guide & Cheat Sheet | Printable PDF",
+      "bonus": "New visitor tips, park lingo glossary, planning basics -- perfect for your first trip",
+      "board_id": "1078612248196057242",
+      "price": "$8.99",
+      "listing_url": "https://www.etsy.com/listing/4533164739"
+    },
+    {
+      "file": "pin_032_disney_trip_countdown_reveal_cards.jpg",
+      "title": "Disney Trip Countdown & Reveal Cards | Printable PDF",
+      "bonus": "We're Going announcement cards + daily countdown calendar -- surprise the kids in style",
+      "board_id": "1078612248196057242",
+      "price": "$8.99",
+      "listing_url": "https://www.etsy.com/listing/4533178130"
+    },
+    {
+      "file": "pin_033_disney_vacation_savings_challenge_tracker.jpg",
+      "title": "Disney Vacation Savings Challenge Tracker | Printable PDF",
+      "bonus": "52-week savings plan + budget goal planner -- fund your trip stress-free",
+      "board_id": "1078612248196057241",
+      "price": "$8.99",
+      "listing_url": "https://www.etsy.com/listing/4533164841"
     }
   ],
   "_video_comment": "video_url (added 2026-07-03) is a relative path in THIS repo (repo_raw_base + video_url = full public mp4 URL) for the Buffer-based video-pin poster. Only 3 sample pins have video_url so far (Phase 1 sample test) -- full rollout pending Matt's review of the sample videos. Buffer posting config: organizationId 6a48235d7add101768ce2235, channelId 6a4823da5ab6d2f106a03198 ('midwestmade4u Pinterest Business'). Buffer's internal board ids (pin_subprofile) differ from Pinterest's native board_id above -- see buffer_board_map for the name-based translation.",
