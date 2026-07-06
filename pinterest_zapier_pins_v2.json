@@ -269,6 +269,14 @@
       "board_id": "1078612248196057241",
       "price": "$8.99",
       "listing_url": "https://www.etsy.com/listing/4533164841"
+    },
+    {
+      "file": "pin_034_disneyland_trip_planner.jpg",
+      "title": "Disneyland Trip Planner | 4 Printable Templates",
+      "bonus": "Genie+/Lightning Lane budget planner, Downtown Disney dining guide, local-only tips -- built for Disneyland specifically (not Walt Disney World)",
+      "board_id": "1078612248196086848",
+      "price": "$14.99",
+      "listing_url": "https://www.etsy.com/listing/4533533354"
     }
   ],
   "_video_comment": "video_url (added 2026-07-03) is a relative path in THIS repo (repo_raw_base + video_url = full public mp4 URL) for the Buffer-based video-pin poster. Only 3 sample pins have video_url so far (Phase 1 sample test) -- full rollout pending Matt's review of the sample videos. Buffer posting config: organizationId 6a48235d7add101768ce2235, channelId 6a4823da5ab6d2f106a03198 ('midwestmade4u Pinterest Business'). Buffer's internal board ids (pin_subprofile) differ from Pinterest's native board_id above -- see buffer_board_map for the name-based translation.",
