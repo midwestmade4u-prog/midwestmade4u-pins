@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
 Generates GH-Pages redirect pages (r/{stem}.html) + a tracking_url/_listing_slug
-field per pin, from pinterest_zapier_pins_v2.json (or whatever is the current live
-config). Re-run this any time a new pin is added to the rotation.
+field per pin, from the current pins JSON. Re-run any time a pin is added.
 
-Click tracking: abacus.jasoncameron.dev (free, keyless hit-counter API).
-  - per-pin:    GET /get/mm4u-pin/{stem}
-  - per-listing GET /get/mm4u-listing/{slug}
-  - site total: GET /get/mm4u-total/clicks
-
-Usage: python3 tools/generate_redirects.py <input.json> <output.json>
+UPDATED 2026-07-07: adds Open Graph Product markup (og:type=product,
+product:price:amount/currency, og:availability) to every redirect page.
+Pinterest retired the manual "apply for Rich Pins" step -- it's now fully
+automatic based on OG/Product metadata on whatever page the pin actually
+links to. Since pins now link through this redirect (not straight to Etsy,
+per the Phase 1a attribution fix), the redirect page itself needs valid
+Product markup or Rich Pins won't populate. Metadata mirrors the real
+listing (title/price) so nothing here is misleading -- the redirect still
+forwards instantly to the real Etsy listing (meta refresh, content="0").
 """
 import json, sys, os
 from urllib.parse import urlparse
@@ -27,14 +29,19 @@ def listing_slug(url):
     return "unknown"
 
 
+def clean_title(title):
+    return title.split("|")[0].strip()
+
+
 def main():
-    infile = sys.argv[1] if len(sys.argv) > 1 else "pinterest_zapier_pins_v2.json"
-    outfile = sys.argv[2] if len(sys.argv) > 2 else "pinterest_zapier_pins_v3.json"
+    infile = sys.argv[1] if len(sys.argv) > 1 else "pinterest_zapier_pins_v4.json"
+    outfile = sys.argv[2] if len(sys.argv) > 2 else "pinterest_zapier_pins_v4.json"
 
     with open(infile) as f:
         data = json.load(f)
 
     os.makedirs("r", exist_ok=True)
+    repo_raw_base = data.get("repo_raw_base", "")
 
     for p in data["pins"]:
         stem = p["file"].rsplit(".", 1)[0]
@@ -44,13 +51,30 @@ def main():
         p["tracking_url"] = f"{GH_PAGES_BASE}/r/{stem}.html"
         p["_listing_slug"] = slug
 
+        title = clean_title(p.get("title", "MidwestMade4U Printable"))
+        price = p.get("price", "$8.99").replace("$", "")
+        image_url = repo_raw_base + p["file"] if repo_raw_base else ""
+        page_url = f"{GH_PAGES_BASE}/r/{stem}.html"
+        description = p.get("bonus", "Instant download Disney printable planner.")
+
         html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0;url={utm_dest}">
-<title>Redirecting to MidwestMade4U...</title>
+<title>{title}</title>
+
+<!-- Open Graph / Pinterest Product Rich Pin markup -->
+<meta property="og:type" content="product">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{description}">
+<meta property="og:url" content="{page_url}">
+<meta property="og:image" content="{image_url}">
+<meta property="product:price:amount" content="{price}">
+<meta property="product:price:currency" content="USD">
+<meta property="og:availability" content="instock">
+
 <script>
 (function() {{
   var beacons = [
