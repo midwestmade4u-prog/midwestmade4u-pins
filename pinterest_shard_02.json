@@ -9,7 +9,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_007_epcot_drinking_v5.html",
     "_listing_slug": "theme-park-around-the-world-snack-drink",
     "_variant": "v5",
-    "_base_pin": "pin_007_epcot_drinking"
+    "_base_pin": "pin_007_epcot_drinking",
+    "weight": 1
   },
   {
     "file": "pin_008_hollywood.jpg",
@@ -20,7 +21,8 @@
     "listing_url": "https://www.etsy.com/listing/4511213868/theme-park-ride-priority-planner",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_008_hollywood.html",
     "_listing_slug": "theme-park-ride-priority-planner",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_008_hollywood_v2.jpg",
@@ -32,7 +34,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_008_hollywood_v2.html",
     "_listing_slug": "theme-park-ride-priority-planner",
     "_variant": "v2",
-    "_base_pin": "pin_008_hollywood"
+    "_base_pin": "pin_008_hollywood",
+    "weight": 1
   },
   {
     "file": "pin_008_hollywood_v3.jpg",
@@ -44,7 +47,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_008_hollywood_v3.html",
     "_listing_slug": "theme-park-ride-priority-planner",
     "_variant": "v3",
-    "_base_pin": "pin_008_hollywood"
+    "_base_pin": "pin_008_hollywood",
+    "weight": 1
   },
   {
     "file": "pin_008_hollywood_v4.jpg",
@@ -56,7 +60,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_008_hollywood_v4.html",
     "_listing_slug": "theme-park-ride-priority-planner",
     "_variant": "v4",
-    "_base_pin": "pin_008_hollywood"
+    "_base_pin": "pin_008_hollywood",
+    "weight": 1
   },
   {
     "file": "pin_008_hollywood_v5.jpg",
@@ -68,7 +73,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_008_hollywood_v5.html",
     "_listing_slug": "theme-park-ride-priority-planner",
     "_variant": "v5",
-    "_base_pin": "pin_008_hollywood"
+    "_base_pin": "pin_008_hollywood",
+    "weight": 1
   },
   {
     "file": "pin_009_animal_kingdom.jpg",
@@ -79,7 +85,8 @@
     "listing_url": "https://www.etsy.com/listing/4511213944/theme-park-family-day-planner-printable",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_009_animal_kingdom.html",
     "_listing_slug": "theme-park-family-day-planner-printable",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_009_animal_kingdom_v2.jpg",
@@ -91,7 +98,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_009_animal_kingdom_v2.html",
     "_listing_slug": "theme-park-family-day-planner-printable",
     "_variant": "v2",
-    "_base_pin": "pin_009_animal_kingdom"
+    "_base_pin": "pin_009_animal_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_009_animal_kingdom_v3.jpg",
@@ -103,7 +111,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_009_animal_kingdom_v3.html",
     "_listing_slug": "theme-park-family-day-planner-printable",
     "_variant": "v3",
-    "_base_pin": "pin_009_animal_kingdom"
+    "_base_pin": "pin_009_animal_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_009_animal_kingdom_v4.jpg",
@@ -115,7 +124,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_009_animal_kingdom_v4.html",
     "_listing_slug": "theme-park-family-day-planner-printable",
     "_variant": "v4",
-    "_base_pin": "pin_009_animal_kingdom"
+    "_base_pin": "pin_009_animal_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_009_animal_kingdom_v5.jpg",
@@ -127,7 +137,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_009_animal_kingdom_v5.html",
     "_listing_slug": "theme-park-family-day-planner-printable",
     "_variant": "v5",
-    "_base_pin": "pin_009_animal_kingdom"
+    "_base_pin": "pin_009_animal_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_010_two_park.jpg",
@@ -138,7 +149,8 @@
     "listing_url": "https://www.etsy.com/listing/4511214038/two-park-day-planner-printable-park",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_010_two_park.html",
     "_listing_slug": "two-park-day-planner-printable-park",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_010_two_park_v2.jpg",
@@ -150,7 +162,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_010_two_park_v2.html",
     "_listing_slug": "two-park-day-planner-printable-park",
     "_variant": "v2",
-    "_base_pin": "pin_010_two_park"
+    "_base_pin": "pin_010_two_park",
+    "weight": 1
   },
   {
     "file": "pin_010_two_park_v3.jpg",
@@ -162,7 +175,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_010_two_park_v3.html",
     "_listing_slug": "two-park-day-planner-printable-park",
     "_variant": "v3",
-    "_base_pin": "pin_010_two_park"
+    "_base_pin": "pin_010_two_park",
+    "weight": 1
   },
   {
     "file": "pin_010_two_park_v4.jpg",
@@ -174,7 +188,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_010_two_park_v4.html",
     "_listing_slug": "two-park-day-planner-printable-park",
     "_variant": "v4",
-    "_base_pin": "pin_010_two_park"
+    "_base_pin": "pin_010_two_park",
+    "weight": 1
   },
   {
     "file": "pin_010_two_park_v5.jpg",
@@ -186,7 +201,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_010_two_park_v5.html",
     "_listing_slug": "two-park-day-planner-printable-park",
     "_variant": "v5",
-    "_base_pin": "pin_010_two_park"
+    "_base_pin": "pin_010_two_park",
+    "weight": 1
   },
   {
     "file": "pin_011_character.jpg",
@@ -197,6 +213,7 @@
     "listing_url": "https://www.etsy.com/listing/4511273786/disney-autograph-book-and-character-meet",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_011_character.html",
     "_listing_slug": "disney-autograph-book-and-character-meet",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   }
 ]

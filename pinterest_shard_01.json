@@ -9,7 +9,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_004_solo_adult_v3.html",
     "_listing_slug": "theme-park-solo-adult-packing-list",
     "_variant": "v3",
-    "_base_pin": "pin_004_solo_adult"
+    "_base_pin": "pin_004_solo_adult",
+    "weight": 1
   },
   {
     "file": "pin_004_solo_adult_v4.jpg",
@@ -21,7 +22,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_004_solo_adult_v4.html",
     "_listing_slug": "theme-park-solo-adult-packing-list",
     "_variant": "v4",
-    "_base_pin": "pin_004_solo_adult"
+    "_base_pin": "pin_004_solo_adult",
+    "weight": 1
   },
   {
     "file": "pin_004_solo_adult_v5.jpg",
@@ -33,7 +35,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_004_solo_adult_v5.html",
     "_listing_slug": "theme-park-solo-adult-packing-list",
     "_variant": "v5",
-    "_base_pin": "pin_004_solo_adult"
+    "_base_pin": "pin_004_solo_adult",
+    "weight": 1
   },
   {
     "file": "pin_005_toddler.jpg",
@@ -44,7 +47,8 @@
     "listing_url": "https://www.etsy.com/listing/4511101515/disney-toddler-trip-essentials-checklist",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_005_toddler.html",
     "_listing_slug": "disney-toddler-trip-essentials-checklist",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_005_toddler_v2.jpg",
@@ -56,7 +60,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_005_toddler_v2.html",
     "_listing_slug": "disney-toddler-trip-essentials-checklist",
     "_variant": "v2",
-    "_base_pin": "pin_005_toddler"
+    "_base_pin": "pin_005_toddler",
+    "weight": 1
   },
   {
     "file": "pin_005_toddler_v3.jpg",
@@ -68,7 +73,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_005_toddler_v3.html",
     "_listing_slug": "disney-toddler-trip-essentials-checklist",
     "_variant": "v3",
-    "_base_pin": "pin_005_toddler"
+    "_base_pin": "pin_005_toddler",
+    "weight": 1
   },
   {
     "file": "pin_005_toddler_v4.jpg",
@@ -80,7 +86,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_005_toddler_v4.html",
     "_listing_slug": "disney-toddler-trip-essentials-checklist",
     "_variant": "v4",
-    "_base_pin": "pin_005_toddler"
+    "_base_pin": "pin_005_toddler",
+    "weight": 1
   },
   {
     "file": "pin_005_toddler_v5.jpg",
@@ -92,7 +99,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_005_toddler_v5.html",
     "_listing_slug": "disney-toddler-trip-essentials-checklist",
     "_variant": "v5",
-    "_base_pin": "pin_005_toddler"
+    "_base_pin": "pin_005_toddler",
+    "weight": 1
   },
   {
     "file": "pin_006_magic_kingdom.jpg",
@@ -104,7 +112,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_006_magic_kingdom.html",
     "_listing_slug": "theme-park-one-day-itinerary-planner",
     "_variant": "v1",
-    "video_url": "videos/pin_006_magic_kingdom.mp4"
+    "video_url": "videos/pin_006_magic_kingdom.mp4",
+    "weight": 1
   },
   {
     "file": "pin_006_magic_kingdom_v2.jpg",
@@ -116,7 +125,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_006_magic_kingdom_v2.html",
     "_listing_slug": "theme-park-one-day-itinerary-planner",
     "_variant": "v2",
-    "_base_pin": "pin_006_magic_kingdom"
+    "_base_pin": "pin_006_magic_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_006_magic_kingdom_v3.jpg",
@@ -128,7 +138,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_006_magic_kingdom_v3.html",
     "_listing_slug": "theme-park-one-day-itinerary-planner",
     "_variant": "v3",
-    "_base_pin": "pin_006_magic_kingdom"
+    "_base_pin": "pin_006_magic_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_006_magic_kingdom_v4.jpg",
@@ -140,7 +151,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_006_magic_kingdom_v4.html",
     "_listing_slug": "theme-park-one-day-itinerary-planner",
     "_variant": "v4",
-    "_base_pin": "pin_006_magic_kingdom"
+    "_base_pin": "pin_006_magic_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_006_magic_kingdom_v5.jpg",
@@ -152,7 +164,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_006_magic_kingdom_v5.html",
     "_listing_slug": "theme-park-one-day-itinerary-planner",
     "_variant": "v5",
-    "_base_pin": "pin_006_magic_kingdom"
+    "_base_pin": "pin_006_magic_kingdom",
+    "weight": 1
   },
   {
     "file": "pin_007_epcot_drinking.jpg",
@@ -163,7 +176,8 @@
     "listing_url": "https://www.etsy.com/listing/4511213796/theme-park-around-the-world-snack-drink",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_007_epcot_drinking.html",
     "_listing_slug": "theme-park-around-the-world-snack-drink",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_007_epcot_drinking_v2.jpg",
@@ -175,7 +189,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_007_epcot_drinking_v2.html",
     "_listing_slug": "theme-park-around-the-world-snack-drink",
     "_variant": "v2",
-    "_base_pin": "pin_007_epcot_drinking"
+    "_base_pin": "pin_007_epcot_drinking",
+    "weight": 1
   },
   {
     "file": "pin_007_epcot_drinking_v3.jpg",
@@ -187,7 +202,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_007_epcot_drinking_v3.html",
     "_listing_slug": "theme-park-around-the-world-snack-drink",
     "_variant": "v3",
-    "_base_pin": "pin_007_epcot_drinking"
+    "_base_pin": "pin_007_epcot_drinking",
+    "weight": 1
   },
   {
     "file": "pin_007_epcot_drinking_v4.jpg",
@@ -199,6 +215,7 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_007_epcot_drinking_v4.html",
     "_listing_slug": "theme-park-around-the-world-snack-drink",
     "_variant": "v4",
-    "_base_pin": "pin_007_epcot_drinking"
+    "_base_pin": "pin_007_epcot_drinking",
+    "weight": 1
   }
 ]

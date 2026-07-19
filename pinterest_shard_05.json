@@ -8,7 +8,8 @@
     "listing_url": "https://www.etsy.com/listing/4511280044/multi-park-vacation-day-strategy-planner",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_018_multipark.html",
     "_listing_slug": "multi-park-vacation-day-strategy-planner",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_018_multipark_v2.jpg",
@@ -20,7 +21,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_018_multipark_v2.html",
     "_listing_slug": "multi-park-vacation-day-strategy-planner",
     "_variant": "v2",
-    "_base_pin": "pin_018_multipark"
+    "_base_pin": "pin_018_multipark",
+    "weight": 1
   },
   {
     "file": "pin_018_multipark_v3.jpg",
@@ -32,7 +34,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_018_multipark_v3.html",
     "_listing_slug": "multi-park-vacation-day-strategy-planner",
     "_variant": "v3",
-    "_base_pin": "pin_018_multipark"
+    "_base_pin": "pin_018_multipark",
+    "weight": 1
   },
   {
     "file": "pin_018_multipark_v4.jpg",
@@ -44,7 +47,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_018_multipark_v4.html",
     "_listing_slug": "multi-park-vacation-day-strategy-planner",
     "_variant": "v4",
-    "_base_pin": "pin_018_multipark"
+    "_base_pin": "pin_018_multipark",
+    "weight": 1
   },
   {
     "file": "pin_018_multipark_v5.jpg",
@@ -56,7 +60,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_018_multipark_v5.html",
     "_listing_slug": "multi-park-vacation-day-strategy-planner",
     "_variant": "v5",
-    "_base_pin": "pin_018_multipark"
+    "_base_pin": "pin_018_multipark",
+    "weight": 1
   },
   {
     "file": "pin_019_journal.jpg",
@@ -67,7 +72,8 @@
     "listing_url": "https://www.etsy.com/listing/4511280108/theme-park-trip-memory-journal-printable",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_019_journal.html",
     "_listing_slug": "theme-park-trip-memory-journal-printable",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_019_journal_v2.jpg",
@@ -79,7 +85,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_019_journal_v2.html",
     "_listing_slug": "theme-park-trip-memory-journal-printable",
     "_variant": "v2",
-    "_base_pin": "pin_019_journal"
+    "_base_pin": "pin_019_journal",
+    "weight": 1
   },
   {
     "file": "pin_019_journal_v3.jpg",
@@ -91,7 +98,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_019_journal_v3.html",
     "_listing_slug": "theme-park-trip-memory-journal-printable",
     "_variant": "v3",
-    "_base_pin": "pin_019_journal"
+    "_base_pin": "pin_019_journal",
+    "weight": 1
   },
   {
     "file": "pin_019_journal_v4.jpg",
@@ -103,7 +111,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_019_journal_v4.html",
     "_listing_slug": "theme-park-trip-memory-journal-printable",
     "_variant": "v4",
-    "_base_pin": "pin_019_journal"
+    "_base_pin": "pin_019_journal",
+    "weight": 1
   },
   {
     "file": "pin_019_journal_v5.jpg",
@@ -115,7 +124,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_019_journal_v5.html",
     "_listing_slug": "theme-park-trip-memory-journal-printable",
     "_variant": "v5",
-    "_base_pin": "pin_019_journal"
+    "_base_pin": "pin_019_journal",
+    "weight": 1
   },
   {
     "file": "pin_020_souvenir.jpg",
@@ -126,7 +136,8 @@
     "listing_url": "https://www.etsy.com/listing/4511280156/theme-park-souvenir-wishlist-and-budget",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_020_souvenir.html",
     "_listing_slug": "theme-park-souvenir-wishlist-and-budget",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_020_souvenir_v2.jpg",
@@ -138,7 +149,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_020_souvenir_v2.html",
     "_listing_slug": "theme-park-souvenir-wishlist-and-budget",
     "_variant": "v2",
-    "_base_pin": "pin_020_souvenir"
+    "_base_pin": "pin_020_souvenir",
+    "weight": 1
   },
   {
     "file": "pin_020_souvenir_v3.jpg",
@@ -150,7 +162,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_020_souvenir_v3.html",
     "_listing_slug": "theme-park-souvenir-wishlist-and-budget",
     "_variant": "v3",
-    "_base_pin": "pin_020_souvenir"
+    "_base_pin": "pin_020_souvenir",
+    "weight": 1
   },
   {
     "file": "pin_020_souvenir_v4.jpg",
@@ -162,7 +175,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_020_souvenir_v4.html",
     "_listing_slug": "theme-park-souvenir-wishlist-and-budget",
     "_variant": "v4",
-    "_base_pin": "pin_020_souvenir"
+    "_base_pin": "pin_020_souvenir",
+    "weight": 1
   },
   {
     "file": "pin_020_souvenir_v5.jpg",
@@ -174,7 +188,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_020_souvenir_v5.html",
     "_listing_slug": "theme-park-souvenir-wishlist-and-budget",
     "_variant": "v5",
-    "_base_pin": "pin_020_souvenir"
+    "_base_pin": "pin_020_souvenir",
+    "weight": 1
   },
   {
     "file": "pin_021_flagship_bundle.jpg",
@@ -185,7 +200,8 @@
     "listing_url": "https://www.etsy.com/listing/4531251112",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_021_flagship_bundle.html",
     "_listing_slug": "4531251112",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 3
   },
   {
     "file": "pin_021_flagship_bundle_v2.jpg",
@@ -197,6 +213,7 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_021_flagship_bundle_v2.html",
     "_listing_slug": "4531251112",
     "_variant": "v2",
-    "_base_pin": "pin_021_flagship_bundle"
+    "_base_pin": "pin_021_flagship_bundle",
+    "weight": 3
   }
 ]

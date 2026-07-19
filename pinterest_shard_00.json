@@ -9,7 +9,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_001_family_packing.html",
     "_listing_slug": "disney-world-family-packing-checklist",
     "_variant": "v1",
-    "video_url": "videos/pin_001_family_packing.mp4"
+    "video_url": "videos/pin_001_family_packing.mp4",
+    "weight": 1
   },
   {
     "file": "pin_001_family_packing_v2.jpg",
@@ -21,7 +22,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_001_family_packing_v2.html",
     "_listing_slug": "disney-world-family-packing-checklist",
     "_variant": "v2",
-    "_base_pin": "pin_001_family_packing"
+    "_base_pin": "pin_001_family_packing",
+    "weight": 1
   },
   {
     "file": "pin_001_family_packing_v3.jpg",
@@ -33,7 +35,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_001_family_packing_v3.html",
     "_listing_slug": "disney-world-family-packing-checklist",
     "_variant": "v3",
-    "_base_pin": "pin_001_family_packing"
+    "_base_pin": "pin_001_family_packing",
+    "weight": 1
   },
   {
     "file": "pin_001_family_packing_v4.jpg",
@@ -45,7 +48,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_001_family_packing_v4.html",
     "_listing_slug": "disney-world-family-packing-checklist",
     "_variant": "v4",
-    "_base_pin": "pin_001_family_packing"
+    "_base_pin": "pin_001_family_packing",
+    "weight": 1
   },
   {
     "file": "pin_001_family_packing_v5.jpg",
@@ -57,7 +61,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_001_family_packing_v5.html",
     "_listing_slug": "disney-world-family-packing-checklist",
     "_variant": "v5",
-    "_base_pin": "pin_001_family_packing"
+    "_base_pin": "pin_001_family_packing",
+    "weight": 1
   },
   {
     "file": "pin_002_cruise.jpg",
@@ -68,7 +73,8 @@
     "listing_url": "https://www.etsy.com/listing/4511098726/disney-cruise-packing-checklist",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_002_cruise.html",
     "_listing_slug": "disney-cruise-packing-checklist",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_002_cruise_v2.jpg",
@@ -80,7 +86,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_002_cruise_v2.html",
     "_listing_slug": "disney-cruise-packing-checklist",
     "_variant": "v2",
-    "_base_pin": "pin_002_cruise"
+    "_base_pin": "pin_002_cruise",
+    "weight": 1
   },
   {
     "file": "pin_002_cruise_v3.jpg",
@@ -92,7 +99,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_002_cruise_v3.html",
     "_listing_slug": "disney-cruise-packing-checklist",
     "_variant": "v3",
-    "_base_pin": "pin_002_cruise"
+    "_base_pin": "pin_002_cruise",
+    "weight": 1
   },
   {
     "file": "pin_002_cruise_v4.jpg",
@@ -104,7 +112,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_002_cruise_v4.html",
     "_listing_slug": "disney-cruise-packing-checklist",
     "_variant": "v4",
-    "_base_pin": "pin_002_cruise"
+    "_base_pin": "pin_002_cruise",
+    "weight": 1
   },
   {
     "file": "pin_002_cruise_v5.jpg",
@@ -116,7 +125,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_002_cruise_v5.html",
     "_listing_slug": "disney-cruise-packing-checklist",
     "_variant": "v5",
-    "_base_pin": "pin_002_cruise"
+    "_base_pin": "pin_002_cruise",
+    "weight": 1
   },
   {
     "file": "pin_003_disneyland_day.jpg",
@@ -127,7 +137,8 @@
     "listing_url": "https://www.etsy.com/listing/4511098011/theme-park-day-trip-packing-list",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_003_disneyland_day.html",
     "_listing_slug": "theme-park-day-trip-packing-list",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_003_disneyland_day_v2.jpg",
@@ -139,7 +150,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_003_disneyland_day_v2.html",
     "_listing_slug": "theme-park-day-trip-packing-list",
     "_variant": "v2",
-    "_base_pin": "pin_003_disneyland_day"
+    "_base_pin": "pin_003_disneyland_day",
+    "weight": 1
   },
   {
     "file": "pin_003_disneyland_day_v3.jpg",
@@ -151,7 +163,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_003_disneyland_day_v3.html",
     "_listing_slug": "theme-park-day-trip-packing-list",
     "_variant": "v3",
-    "_base_pin": "pin_003_disneyland_day"
+    "_base_pin": "pin_003_disneyland_day",
+    "weight": 1
   },
   {
     "file": "pin_003_disneyland_day_v4.jpg",
@@ -163,7 +176,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_003_disneyland_day_v4.html",
     "_listing_slug": "theme-park-day-trip-packing-list",
     "_variant": "v4",
-    "_base_pin": "pin_003_disneyland_day"
+    "_base_pin": "pin_003_disneyland_day",
+    "weight": 1
   },
   {
     "file": "pin_003_disneyland_day_v5.jpg",
@@ -175,7 +189,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_003_disneyland_day_v5.html",
     "_listing_slug": "theme-park-day-trip-packing-list",
     "_variant": "v5",
-    "_base_pin": "pin_003_disneyland_day"
+    "_base_pin": "pin_003_disneyland_day",
+    "weight": 1
   },
   {
     "file": "pin_004_solo_adult.jpg",
@@ -186,7 +201,8 @@
     "listing_url": "https://www.etsy.com/listing/4511098075/theme-park-solo-adult-packing-list",
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_004_solo_adult.html",
     "_listing_slug": "theme-park-solo-adult-packing-list",
-    "_variant": "v1"
+    "_variant": "v1",
+    "weight": 1
   },
   {
     "file": "pin_004_solo_adult_v2.jpg",
@@ -198,6 +214,7 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_004_solo_adult_v2.html",
     "_listing_slug": "theme-park-solo-adult-packing-list",
     "_variant": "v2",
-    "_base_pin": "pin_004_solo_adult"
+    "_base_pin": "pin_004_solo_adult",
+    "weight": 1
   }
 ]
