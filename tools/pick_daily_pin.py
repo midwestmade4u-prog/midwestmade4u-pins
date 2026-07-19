@@ -5,16 +5,24 @@ auto-poster (built 2026-07-19 to actually wire up the rotation system that
 had been sitting unused since it was first built).
 
 No persistent "posted" ledger is needed for pin SELECTION -- the pin for any
-given calendar date is a pure function of that date, so the same day always
-picks the same pin (safe to re-run), and every pin in the pool gets used
-(proportional to its weight) before any repeat. This was the design intent
-documented in generate_variants.py's _rotation_comment; this script is the
-first actual implementation of it.
+given (calendar date, slot) is a pure function of those two inputs, so the
+same date+slot always picks the same pin (safe to re-run), and every pin in
+the pool gets used (proportional to its weight) before any repeat. This was
+the design intent documented in generate_variants.py's _rotation_comment;
+this script is the first actual implementation of it.
+
+UPDATED 2026-07-19 (scaling 1 post/day -> 3 posts/day): added a "slot"
+concept (0, 1, 2 -- one per scheduled trigger/time-of-day) so a single
+calendar date can drive 3 distinct posts instead of 1, guaranteed distinct
+from each other (see build_weighted_list's global-index math below). Each of
+the 3 scheduled triggers passes its own fixed --slot; slot is NOT auto-picked
+by time-of-day, it's just an integer baked into each trigger's prompt.
 
 Usage:
-    python3 pick_daily_pin.py                  # today (UTC date), pool fetched from GitHub raw
-    python3 pick_daily_pin.py 2026-08-01        # a specific date (for testing/backfill)
-    python3 pick_daily_pin.py --local /path/to/repo  # read shards from a local clone instead of network
+    python3 pick_daily_pin.py                        # today (UTC date), slot 0, pool fetched from GitHub raw
+    python3 pick_daily_pin.py 2026-08-01              # a specific date, slot 0
+    python3 pick_daily_pin.py 2026-08-01 --slot 2     # a specific date + slot (0, 1, or 2)
+    python3 pick_daily_pin.py --local /path/to/repo   # read shards from a local clone instead of network
 
 Prints one JSON object to stdout with everything the caller needs to place
 the Pinterest post:
@@ -53,6 +61,7 @@ from datetime import date, timezone, datetime
 REPO_RAW_BASE = "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/"
 ROTATION_EPOCH = date(2026, 1, 1)
 NUM_SHARDS = 12  # bumped 2026-07-19: shards 10-11 added for the 12 new holiday/back-to-school SKUs
+POSTS_PER_DAY = 3  # bumped 2026-07-19: scaled from 1 to 3 posts/day (see slot math in main())
 
 
 def fetch_json(url):
@@ -79,27 +88,59 @@ def build_pool(local_dir=None):
 
 def build_weighted_list(pool):
     """
-    Builds the day-by-day rotation order as successive full PASSES over the
-    pool rather than grouping each pin's repeats together.
+    Builds the rotation order as successive full PASSES over LISTINGS (not
+    individual pin files), then assigns each successive occurrence of a
+    listing its next variant file (v1, v2, v3, ... cycling back to v1 after
+    the last). Returns a list of POOL INDICES, one per rotation "slot".
 
-    IMPORTANT: grouping repeats together (e.g. [.., 100,100,100, 101,101,101, ..],
-    which is how the original hand-maintained weighted_list was built) makes a
-    stateless day-index walk land on the EXACT SAME image on 3 consecutive
-    calendar days for every weight-3 pin -- directly defeating the whole point
-    of the 5-variant fresh-pin system, which exists specifically to avoid
-    Pinterest's same-image-repost penalty. Caught by testing this script
-    against consecutive dates before it ever went live.
+    IMPORTANT HISTORY -- two bugs already found and fixed here, in order:
 
-    Instead: pass 1 = every pin once (in pool order), pass 2 = every pin with
-    weight >= 2 once, pass 3 = every pin with weight >= 3 once, etc. Within a
-    single pass every pin index is distinct (no adjacent repeats), and a given
-    weight-3 pin's three occurrences land ~70 days apart (min gap = len(pool
-    restricted to weight>=2), comfortably beyond any realistic repost window.
+    Bug 1 (fixed 2026-07-19, original build): grouping a weighted pin's
+    repeats together in the array (e.g. [..,100,100,100,101,101,101,..])
+    makes a stateless day-index walk land on the EXACT SAME image on 3
+    consecutive calendar days for every weight-3 pin. Fixed by building the
+    rotation as successive PASSES over the pool instead.
+
+    Bug 2 (fixed 2026-07-19, when scaling 1 post/day -> 3 posts/day): the
+    "successive passes over the pool" fix above was still built at the
+    individual-FILE level, and the pool stores a listing's 5 variant files
+    consecutively (v1..v5 adjacent). That's harmless walking one step/day,
+    but the instant 3 posts/day meant reading 3 CONSECUTIVE pool positions
+    per day -- which landed on 3 variants of the SAME listing, not 3
+    different products. Caught immediately by testing --slot 0/1/2 for one
+    date before wiring up any live triggers (see tools/README.md).
+
+    Fix: pass/repeat weighting now operates on LISTINGS (grouped by each
+    pin's "_base_pin", or the file's own stem for v1 entries), not files.
+    Within any pass, every entry is a DIFFERENT listing -- so any window of
+    consecutive slots up to the number of distinct listings in a pass will
+    never repeat a listing. Each time a listing comes up in this listing-
+    level sequence, it's assigned its NEXT variant file in v1->v2->v3->v4->
+    v5->v1... order, so repeat occurrences of the same listing still use a
+    fresh image, preserving the original point of the 5-variant system.
     """
-    max_weight = max((p.get("weight", 1) for p in pool), default=1)
-    wl = []
+    groups = {}  # base listing key -> list of pool indices, in file (v1..v5) order
+    order = []   # base keys in first-seen (pool) order
+    for idx, p in enumerate(pool):
+        base = p.get("_base_pin") or p["file"].rsplit(".", 1)[0]
+        if base not in groups:
+            groups[base] = []
+            order.append(base)
+        groups[base].append(idx)
+
+    weight_of = {base: pool[groups[base][0]].get("weight", 1) for base in order}
+    max_weight = max(weight_of.values(), default=1)
+
+    listing_seq = []  # sequence of listing keys, weighted, spread via passes
     for occurrence in range(1, max_weight + 1):
-        wl.extend(idx for idx, p in enumerate(pool) if p.get("weight", 1) >= occurrence)
+        listing_seq.extend(base for base in order if weight_of[base] >= occurrence)
+
+    occurrence_count = {base: 0 for base in order}
+    wl = []
+    for base in listing_seq:
+        variants = groups[base]
+        wl.append(variants[occurrence_count[base] % len(variants)])
+        occurrence_count[base] += 1
     return wl
 
 
@@ -107,10 +148,14 @@ def main():
     args = sys.argv[1:]
     local_dir = None
     target_date = None
+    slot = 0
     i = 0
     while i < len(args):
         if args[i] == "--local":
             local_dir = args[i + 1]
+            i += 2
+        elif args[i] == "--slot":
+            slot = int(args[i + 1])
             i += 2
         else:
             target_date = date.fromisoformat(args[i])
@@ -118,6 +163,8 @@ def main():
 
     if target_date is None:
         target_date = datetime.now(timezone.utc).date()
+    if not (0 <= slot < POSTS_PER_DAY):
+        raise SystemExit(f"slot must be 0..{POSTS_PER_DAY - 1}, got {slot}")
 
     pool = build_pool(local_dir)
     weighted_list = build_weighted_list(pool)
@@ -126,13 +173,24 @@ def main():
     if day_index < 0:
         raise SystemExit(f"target date {target_date} is before rotation epoch {ROTATION_EPOCH}")
 
-    selection_index = day_index % len(weighted_list)
+    # Global index walks forward by 1 every single post (not every day), so
+    # each day's 3 slots land on 3 CONSECUTIVE weighted_list positions --
+    # guaranteed distinct from each other (as long as weighted_list has more
+    # than POSTS_PER_DAY entries, true here by a wide margin) -- while still
+    # cycling through the whole weighted list in order, same as the 1x/day
+    # version did. This is the "days-since-epoch * 3 + slot_offset" scheme
+    # originally sketched in generate_variants.py's _rotation_comment, never
+    # implemented until now.
+    global_index = day_index * POSTS_PER_DAY + slot
+    selection_index = global_index % len(weighted_list)
     pin_index = weighted_list[selection_index]
     pin = pool[pin_index]
 
     out = {
         "date": target_date.isoformat(),
+        "slot": slot,
         "day_index": day_index,
+        "global_index": global_index,
         "selection_index": selection_index,
         "pin_index": pin_index,
         "pool_size": len(pool),

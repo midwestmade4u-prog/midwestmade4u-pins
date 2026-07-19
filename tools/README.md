@@ -1,28 +1,66 @@
 # Pin Rotation & Video Pipeline Tools
 
 ## `pick_daily_pin.py` (added 2026-07-19 -- the actual live scheduler logic)
-Deterministic, stateless picker: for any calendar date, always returns the same one pin (safe to
-re-run/re-fire without a posted-ledger). Fetches the 10 shards + `pinterest_static_meta.json` from
+Deterministic, stateless picker: for any (calendar date, slot), always returns the same one pin (safe
+to re-run/re-fire without a posted-ledger). Fetches the 12 shards + `pinterest_static_meta.json` from
 `raw.githubusercontent.com` (public, no auth needed) unless `--local <dir>` is passed. Prints a JSON
 object with everything needed to place the Pinterest post (title, board_id, image_url, source_url,
 description).
 
 ```
-python3 pick_daily_pin.py                  # today (UTC date)
-python3 pick_daily_pin.py 2026-08-01        # a specific date (testing/backfill)
-python3 pick_daily_pin.py --local .         # read shards from a local clone instead of the network
+python3 pick_daily_pin.py                     # today (UTC date), slot 0
+python3 pick_daily_pin.py 2026-08-01           # a specific date, slot 0
+python3 pick_daily_pin.py 2026-08-01 --slot 2  # a specific date + slot (0, 1, or 2)
+python3 pick_daily_pin.py --local .            # read shards from a local clone instead of the network
 ```
 
-This is what the recurring Claude Code Remote scheduled task (`create_trigger`, daily cron) actually
-calls each day. Selection weight comes from each pin's own `"weight"` field in the shard files (1 or
-3) -- `pinterest_static_meta.json`'s `weighted_list` is a derived cache for debugging only; regenerate
-it via `build_weighted_list()` in this script any time a pin's weight changes, never hand-edit it.
-Two bugs were found and fixed here on 2026-07-19, before this was ever wired to anything live: (1) the
-hand-maintained `weighted_list` had silently dropped the 3x boost for 4 listings (a drift bug, invisible
-because nothing had ever executed it), and (2) grouping a weight-3 pin's repeats together in the array
-(the original construction) makes a stateless day-index walk post the *identical image* on 3 consecutive
-days -- exactly what the 5-variant system exists to prevent. Fixed by building the rotation order as
-successive passes over the pool instead of grouped repeats (see docstring in the script).
+This is what the recurring Claude Code Remote scheduled tasks (`create_trigger`, one cron per slot)
+actually call each day. Selection weight comes from each pin's own `"weight"` field in the shard files
+(1 or 3) -- `pinterest_static_meta.json`'s `weighted_list` is a derived cache for debugging only;
+regenerate it via `build_weighted_list()` in this script any time a pin's weight changes, never
+hand-edit it.
+
+Three bugs have been found and fixed here so far, each one caught by testing before it ever shipped:
+1. **(2026-07-19, initial build)** The hand-maintained `weighted_list` had silently dropped the 3x
+   boost for 4 listings (a drift bug, invisible because nothing had ever executed it).
+2. **(2026-07-19, initial build)** Grouping a weight-3 pin's repeats together in the array (the
+   original construction) makes a stateless day-index walk post the *identical image* on 3
+   consecutive days. Fixed by building the rotation order as successive passes over the pool.
+3. **(2026-07-19, scaling 1->3 posts/day)** The file-level "successive passes" fix from bug 2 is
+   correct at 1 post/day, but breaks the instant you read 3 consecutive slots in a single day: a
+   listing's 5 variant files sit consecutively in the pool, so 3 consecutive slots landed on 3
+   variants of the *same listing* -- tripling exposure for one product instead of reaching 3
+   different ones. Fixed by rebuilding `weighted_list` at the **listing level** (grouped by each
+   pin's `_base_pin`, or the file's own stem for `v1` entries) instead of the file level, with
+   variant cycling (v1->v2->v3->v4->v5->v1...) layered on top so repeat occurrences of a listing
+   still get a fresh image. See the docstring in `build_weighted_list()` for the full mechanics.
+
+**Always re-run the verification simulation after touching this function** -- it's what caught all
+three bugs above before they ever posted anything live. Minimal version:
+```python
+from pick_daily_pin import build_pool, build_weighted_list, POSTS_PER_DAY
+pool = build_pool(local_dir=".")
+wl = build_weighted_list(pool)
+# then walk N simulated days x POSTS_PER_DAY slots, checking: no same-day listing collisions,
+# no same-day file collisions, no adjacent-slot file repeats, and a sane minimum repeat gap.
+```
+
+### Posting cadence: 1 -> 3 posts/day (2026-07-19)
+Scaled up after checking current Pinterest/industry data on posting frequency for small e-commerce
+accounts -- consensus across Pinterest's own guidance and independent scheduling-tool sources puts
+2-5 fresh pins/day as the safe, effective range for an account with genuinely varied content (not
+5-10+, which risks looking spammy without enough real variety; this catalog's 46 listings x 5
+variants comfortably supports 3/day). The specific risk Matt asked about -- posting at a fixed clock
+time every day looking "bot-like" -- is not supported by any source found; what Pinterest's own
+guidelines and scheduling-tool docs actually flag is rapid-fire bursts and literal image/caption
+repetition, not time-of-day consistency. The mitigation applied instead: the 3 daily posts are
+staggered across the day (morning/midday/evening) rather than fired back-to-back, and use Pinterest's
+own approved API path (Zapier's OAuth-based Pinterest integration), same category as Tailwind/Buffer.
+
+At 3 posts/day, a full rotation cycle is ~33 days for weight-1 listings (the original 20 non-boosted
+Disney listings) and ~8-13 days for weight-3 listings (26 boosted listings -- the 14 newer-tier Disney
+listings plus the 12 holiday/back-to-school ones). Minimum verified gap before any single exact image
+file repeats: 32 days.
 
 # Video Pin Pipeline Tools
 
