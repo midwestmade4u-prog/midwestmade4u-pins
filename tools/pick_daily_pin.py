@@ -35,6 +35,14 @@ Weighting is read directly from each pin's own "weight" field in the shard
 files (source of truth) -- NOT from pinterest_static_meta.json's
 weighted_list, which is a derived convenience copy only. If the two ever
 disagree, the per-pin weight field wins.
+
+A pin entry may optionally carry its own absolute "image_url" (e.g. an
+already-live i.pinimg.com URL for a pin that was posted manually before
+being folded into rotation) -- if present it's used as-is instead of the
+default REPO_RAW_BASE + file construction. Added 2026-07-19 when the 12 new
+holiday/back-to-school SKUs were folded in: their v1 image is the already-
+live Canva export on Pinterest's own CDN, so there was no need to re-host it
+in this repo (only the freshly generated v2-v5 variants live here).
 """
 import json
 import sys
@@ -44,7 +52,7 @@ from datetime import date, timezone, datetime
 
 REPO_RAW_BASE = "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/"
 ROTATION_EPOCH = date(2026, 1, 1)
-NUM_SHARDS = 10
+NUM_SHARDS = 12  # bumped 2026-07-19: shards 10-11 added for the 12 new holiday/back-to-school SKUs
 
 
 def fetch_json(url):
@@ -132,7 +140,7 @@ def main():
         "file": pin["file"],
         "title": pin.get("title", "MidwestMade4U Printable"),
         "board_id": pin["board_id"],
-        "image_url": REPO_RAW_BASE + pin["file"],
+        "image_url": pin.get("image_url") or (REPO_RAW_BASE + pin["file"]),
         "source_url": pin.get("tracking_url", pin.get("listing_url", "")),
         "description": pin.get("bonus", ""),
         "listing_url": pin.get("listing_url", ""),
