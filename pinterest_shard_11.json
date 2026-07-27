@@ -388,5 +388,38 @@
     "_variant": "v5",
     "weight": 3,
     "_base_pin": "pin_046_lunchbox_notes"
+  },
+  {
+    "file": "pin_101_midwest_nice_tee.jpg",
+    "title": "Midwest Nice. | Midwest Pride Graphic Tee",
+    "bonus": "Bella+Canvas 3001 unisex tee, made to order",
+    "board_id": "1078612248196102948",
+    "price": "$24.99",
+    "listing_url": "https://www.etsy.com/listing/4544656960/midwest-nice-shirt-midwest-pride-tee",
+    "weight": 3,
+    "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_101_midwest_nice_tee.html",
+    "_listing_slug": "midwest-nice-shirt-midwest-pride-tee"
+  },
+  {
+    "file": "pin_102_midwest_nice_mug.jpg",
+    "title": "Midwest Nice. | Midwest Pride Coffee Mug",
+    "bonus": "11oz/15oz ceramic mug, made to order",
+    "board_id": "1078612248196102948",
+    "price": "$16.99",
+    "listing_url": "https://www.etsy.com/listing/4544641375/midwest-nice-mug-midwest-pride-coffee",
+    "weight": 3,
+    "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_102_midwest_nice_mug.html",
+    "_listing_slug": "midwest-nice-mug-midwest-pride-coffee"
+  },
+  {
+    "file": "pin_103_midwest_nice_tumbler.jpg",
+    "title": "Midwest Nice. | 20oz Stainless Steel Tumbler",
+    "bonus": "Insulated travel tumbler, made to order",
+    "board_id": "1078612248196102948",
+    "price": "$35.99",
+    "listing_url": "https://www.etsy.com/listing/4544657036/midwest-nice-tumbler-20oz-stainless",
+    "weight": 3,
+    "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_103_midwest_nice_tumbler.html",
+    "_listing_slug": "midwest-nice-tumbler-20oz-stainless"
   }
 ]
