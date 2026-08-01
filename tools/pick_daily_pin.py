@@ -11,6 +11,12 @@ the pool gets used (proportional to its weight) before any repeat. This was
 the design intent documented in generate_variants.py's _rotation_comment;
 this script is the first actual implementation of it.
 
+SUPERSEDED 2026-08-01: cadence is back to 1 post/day and destination URLs
+are built by direct_link() below -- pins link straight to the Etsy listing,
+never to the github.io redirect. The `tracking_url` field still present in
+the shard files is DEAD DATA; do not read it. The paragraph below describes
+the 3-slot design that is no longer in use, kept for context only.
+
 UPDATED 2026-07-19 (scaling 1 post/day -> 3 posts/day): added a "slot"
 concept (0, 1, 2 -- one per scheduled trigger/time-of-day) so a single
 calendar date can drive 3 distinct posts instead of 1, guaranteed distinct
@@ -19,10 +25,12 @@ the 3 scheduled triggers passes its own fixed --slot; slot is NOT auto-picked
 by time-of-day, it's just an integer baked into each trigger's prompt.
 
 Usage:
-    python3 pick_daily_pin.py                        # today (UTC date), slot 0, pool fetched from GitHub raw
-    python3 pick_daily_pin.py 2026-08-01              # a specific date, slot 0
-    python3 pick_daily_pin.py 2026-08-01 --slot 2     # a specific date + slot (0, 1, or 2)
+    python3 pick_daily_pin.py                        # today (UTC date), pool fetched from GitHub raw
+    python3 pick_daily_pin.py 2026-08-01              # a specific date
     python3 pick_daily_pin.py --local /path/to/repo   # read shards from a local clone instead of network
+
+    --slot is still accepted but 2026-08-01 set POSTS_PER_DAY back to 1, so
+    slot 0 is the only valid value; anything else exits with an error.
 
 Prints one JSON object to stdout with everything the caller needs to place
 the Pinterest post:
@@ -35,7 +43,7 @@ the Pinterest post:
       "title": "...",
       "board_id": "...",
       "image_url": "https://raw.githubusercontent.com/.../pin_003_disneyland_day_v3.jpg",
-      "source_url": "https://midwestmade4u-prog.github.io/.../r/pin_003_disneyland_day_v3.html",
+      "source_url": "https://www.etsy.com/listing/4511280044/multi-park-...?utm_source=pinterest&...",
       "description": "..."
     }
 
