@@ -61,7 +61,9 @@ from datetime import date, timezone, datetime
 REPO_RAW_BASE = "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/"
 ROTATION_EPOCH = date(2026, 1, 1)
 NUM_SHARDS = 12  # bumped 2026-07-19: shards 10-11 added for the 12 new holiday/back-to-school SKUs
-POSTS_PER_DAY = 3  # bumped 2026-07-19: scaled from 1 to 3 posts/day (see slot math in main())
+POSTS_PER_DAY = 1  # 2026-08-01: back to 1/day. Ten weeks of data showed raising
+                   # volume LOWERED impressions (252 -> 138); volume is not the lever,
+                   # and a distribution-limited account posting more looks worse.
 
 
 def fetch_json(url):
@@ -144,6 +146,56 @@ def build_weighted_list(pool):
     return wl
 
 
+def direct_link(pin):
+    """
+    Builds the pin's destination URL: the Etsy listing itself, plus UTM params.
+
+    2026-08-01. Replaces the `tracking_url` GitHub Pages redirect that every
+    pin pointed at from 2026-07-07 onward. That redirect was built to fix
+    Etsy's "How shoppers found you -> Social media: 0" and is the most likely
+    reason that number stayed 0: Pinterest's own policy names redirects as a
+    spam signal, and crawling the bounce page instead of the listing stripped
+    the Etsy product metadata that turns a pin into a rich Product Pin.
+
+    Confirmed on this account the same day: all six pins on the Disney board
+    that still point at a bare etsy.com/listing URL render as full Product
+    Pins (Etsy verified badge + live price); every pin pointing at the
+    github.io redirect renders as a plain pin. Zero exceptions in the sample.
+
+    Attribution now comes from these UTM params plus Etsy's own traffic-source
+    report. We lose per-pin beacon counts and gain Product Pins.
+
+    Raises if the listing URL is not an etsy.com URL -- a wrong link is far
+    worse than a skipped post, so fail loudly rather than post something odd.
+    """
+    listing_url = (pin.get("listing_url") or "").strip()
+    if not listing_url.startswith("https://www.etsy.com/listing/"):
+        raise SystemExit(
+            f"refusing to build a destination URL for {pin.get('file')!r}: "
+            f"listing_url is {listing_url!r}, not an etsy.com listing"
+        )
+    if "?" in listing_url:
+        raise SystemExit(
+            f"listing_url for {pin.get('file')!r} already carries a query string "
+            f"({listing_url!r}); refusing to append UTM params blindly"
+        )
+
+    stem = pin["file"].rsplit(".", 1)[0]
+    # listing_url is either .../listing/<id> or .../listing/<id>/<slug>.
+    # Campaign groups by product, so prefer the human-readable slug and fall
+    # back to the numeric id when the shard entry doesn't carry one.
+    tail = listing_url[len("https://www.etsy.com/listing/"):].split("/")
+    campaign = tail[1] if len(tail) > 1 and tail[1] else tail[0]
+
+    return (
+        f"{listing_url}"
+        f"?utm_source=pinterest"
+        f"&utm_medium=pin"
+        f"&utm_campaign={campaign}"
+        f"&utm_content={stem}"
+    )
+
+
 def main():
     args = sys.argv[1:]
     local_dir = None
@@ -199,7 +251,7 @@ def main():
         "title": pin.get("title", "MidwestMade4U Printable"),
         "board_id": pin["board_id"],
         "image_url": pin.get("image_url") or (REPO_RAW_BASE + pin["file"]),
-        "source_url": pin.get("tracking_url", pin.get("listing_url", "")),
+        "source_url": direct_link(pin),
         "description": pin.get("bonus", ""),
         "listing_url": pin.get("listing_url", ""),
         "weight": pin.get("weight", 1),
