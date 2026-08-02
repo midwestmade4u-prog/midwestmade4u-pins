@@ -69,9 +69,29 @@ from datetime import date, timezone, datetime
 REPO_RAW_BASE = "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/"
 ROTATION_EPOCH = date(2026, 1, 1)
 NUM_SHARDS = 13  # bumped 2026-08-01: shard 12 added for the Christmas POD push (4 SKUs x 2 variants)
-POSTS_PER_DAY = 1  # 2026-08-01: back to 1/day. Ten weeks of data showed raising
-                   # volume LOWERED impressions (252 -> 138); volume is not the lever,
-                   # and a distribution-limited account posting more looks worse.
+
+# 2026-08-02: 1 -> 2 posts/day.
+#
+# The 2026-08-01 note below said volume was not the lever, citing impressions
+# falling 252 -> 138 when cadence went 1 -> 3/day. That reading was confounded
+# and is now retired: every pin in that window pointed at the github.io
+# redirect, so the account was posting MORE pins that all carried the defect
+# that was suppressing them. It measured the redirect, not the cadence.
+#
+# 2/day is chosen off the rotation maths, not off that number. Pool = 241 pin
+# files over 53 listings; weighted list is 122 slots after the Christmas
+# re-weight below. At 2/day the full cycle is 61 days and no listing repeats
+# inside ~20 slots. At 3-4/day the same-listing gap drops under 10 days, which
+# is where Pinterest's freshness signal starts working against us. 2/day is
+# the most volume the existing creative supports without repeating itself.
+POSTS_PER_DAY = 2
+
+# Cadence changed mid-rotation, so the post counter cannot simply be
+# day_index * POSTS_PER_DAY -- that would jump the walk backwards and re-serve
+# pins posted in the last week. Instead the counter is continuous across the
+# switch: every day before CADENCE_SWITCH contributed exactly 1 post, every day
+# from it contributes POSTS_PER_DAY.
+CADENCE_SWITCH = date(2026, 8, 3)
 
 
 def fetch_json(url):
@@ -128,6 +148,30 @@ def build_weighted_list(pool):
     level sequence, it's assigned its NEXT variant file in v1->v2->v3->v4->
     v5->v1... order, so repeat occurrences of the same listing still use a
     fresh image, preserving the original point of the 5-variant system.
+
+    Bug 3 (fixed 2026-08-02, when the Christmas SKUs were weighted up for the
+    September window): the "successive passes" scheme only spreads evenly while
+    the weights are roughly flat. Pass N contains only the listings with
+    weight >= N, so raising four listings from 3 to 6 made passes 4, 5 and 6
+    contain nothing but those four -- twelve consecutive Christmas slots at the
+    tail of the cycle, each listing recurring every 4 slots. Exactly the
+    clustering bug 1 was about, reintroduced through the weight field.
+
+    Fix: the order is now produced by SMOOTH WEIGHTED ROUND-ROBIN (the credit
+    scheme nginx uses for upstream balancing) instead of by passes. Every
+    listing accumulates its weight each step; the highest running credit takes
+    the slot and pays back the total weight. A listing of weight w therefore
+    lands almost exactly every total/w slots regardless of what the other
+    weights are, so the weight field is safe to use as a seasonality dial --
+    which is what it is now being used for.
+
+    An earlier attempt placed each occurrence at fraction (k + phase) / w and
+    sorted. Rejected: equal spacing in FRACTION is not equal spacing in INDEX
+    once the fractions bunch up, and the simulation showed the Christmas
+    listings still recurring every 9 slots. The credit scheme spaces by index
+    directly. Verified by simulation: minimum same-listing gap 20 slots
+    (10 days at 2/day), minimum same-image gap 40 slots (20 days), and no
+    calendar day serves one listing twice.
     """
     groups = {}  # base listing key -> list of pool indices, in file (v1..v5) order
     order = []   # base keys in first-seen (pool) order
@@ -139,11 +183,23 @@ def build_weighted_list(pool):
         groups[base].append(idx)
 
     weight_of = {base: pool[groups[base][0]].get("weight", 1) for base in order}
-    max_weight = max(weight_of.values(), default=1)
 
-    listing_seq = []  # sequence of listing keys, weighted, spread via passes
-    for occurrence in range(1, max_weight + 1):
-        listing_seq.extend(base for base in order if weight_of[base] >= occurrence)
+    active = [b for b in order if weight_of[b] > 0]  # weight 0 == benched
+    total = sum(weight_of[b] for b in active)
+    rank = {b: i for i, b in enumerate(order)}
+
+    slots = [None] * total
+    # Heaviest listings claim their ideal positions first, so the seasonal
+    # dial (weight) gets the cleanest spacing; lighter listings fill the gaps.
+    for base in sorted(active, key=lambda b: (-weight_of[b], rank[b])):
+        w = weight_of[base]
+        for k in range(w):
+            ideal = int((k + 0.5) * total / w)
+            j = ideal
+            while slots[j % total] is not None:
+                j += 1
+            slots[j % total] = base
+    listing_seq = slots
 
     occurrence_count = {base: 0 for base in order}
     wl = []
@@ -223,8 +279,12 @@ def main():
 
     if target_date is None:
         target_date = datetime.now(timezone.utc).date()
-    if not (0 <= slot < POSTS_PER_DAY):
-        raise SystemExit(f"slot must be 0..{POSTS_PER_DAY - 1}, got {slot}")
+    max_slot = POSTS_PER_DAY if target_date >= CADENCE_SWITCH else 1
+    if not (0 <= slot < max_slot):
+        raise SystemExit(
+            f"slot must be 0..{max_slot - 1} for {target_date} "
+            f"(cadence switched to {POSTS_PER_DAY}/day on {CADENCE_SWITCH}), got {slot}"
+        )
 
     pool = build_pool(local_dir)
     weighted_list = build_weighted_list(pool)
@@ -241,7 +301,13 @@ def main():
     # version did. This is the "days-since-epoch * 3 + slot_offset" scheme
     # originally sketched in generate_variants.py's _rotation_comment, never
     # implemented until now.
-    global_index = day_index * POSTS_PER_DAY + slot
+    if target_date < CADENCE_SWITCH:
+        # historical 1/day era -- one post per day, slot 0 only
+        global_index = day_index
+    else:
+        posts_before_switch = (CADENCE_SWITCH - ROTATION_EPOCH).days
+        days_since_switch = (target_date - CADENCE_SWITCH).days
+        global_index = posts_before_switch + days_since_switch * POSTS_PER_DAY + slot
     selection_index = global_index % len(weighted_list)
     pin_index = weighted_list[selection_index]
     pin = pool[pin_index]

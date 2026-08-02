@@ -8,11 +8,12 @@
     "listing_url": "https://www.etsy.com/listing/4544656880/christmas-crew-2026-shirt-comfort-colors",
     "_listing_slug": "christmas-crew-2026-shirt-comfort-colors",
     "_variant": "v1",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "Blossom pink garment-dyed t-shirt folded on linen, printed with Merry Christmas Crew Est. 2026 in red and green.",
-    "description": "Funny Christmas shirt for the whole crew \u2014 matching family Christmas tees in soft garment-dyed Comfort Colors cotton. Relaxed unisex fit, sizes S-4XL, printed to order in the USA. An easy holiday photo outfit or a gift that actually gets worn. Shop the full Christmas collection.",
+    "description": "Funny Christmas shirt for the whole crew — matching family Christmas tees in soft garment-dyed Comfort Colors cotton. Relaxed unisex fit, sizes S-4XL, printed to order in the USA. An easy holiday photo outfit or a gift that actually gets worn. Shop the full Christmas collection.",
     "_hook_band": "MATCHING FAMILY CHRISTMAS",
-    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_104_christmas_crew_tee.jpg"
+    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_104_christmas_crew_tee.jpg",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   },
   {
     "file": "pin_104_christmas_crew_tee_v2.jpg",
@@ -23,12 +24,13 @@
     "listing_url": "https://www.etsy.com/listing/4544656880/christmas-crew-2026-shirt-comfort-colors",
     "_listing_slug": "christmas-crew-2026-shirt-comfort-colors",
     "_variant": "v2",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "Bay sage green garment-dyed t-shirt shown flat, printed with Merry Christmas Crew Est. 2026 in red and green.",
-    "description": "Funny Christmas shirt for the whole crew \u2014 matching family Christmas tees in soft garment-dyed Comfort Colors cotton. Relaxed unisex fit, sizes S-4XL, printed to order in the USA. An easy holiday photo outfit or a gift that actually gets worn. Shop the full Christmas collection.",
+    "description": "Funny Christmas shirt for the whole crew — matching family Christmas tees in soft garment-dyed Comfort Colors cotton. Relaxed unisex fit, sizes S-4XL, printed to order in the USA. An easy holiday photo outfit or a gift that actually gets worn. Shop the full Christmas collection.",
     "_hook_band": "FAMILY CHRISTMAS SHIRTS",
     "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_104_christmas_crew_tee_v2.jpg",
-    "_base_pin": "pin_104_christmas_crew_tee"
+    "_base_pin": "pin_104_christmas_crew_tee",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   },
   {
     "file": "pin_105_naughty_list_tee.jpg",
@@ -39,11 +41,12 @@
     "listing_url": "https://www.etsy.com/listing/4544656844/naughty-list-coordinator-shirt-comfort",
     "_listing_slug": "naughty-list-coordinator-shirt-comfort",
     "_variant": "v1",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "Chambray blue garment-dyed t-shirt folded on linen, printed with Official Naughty List Coordinator in red and green.",
     "description": "Naughty list shirt for the person actually running Christmas. Funny Christmas tee in garment-dyed Comfort Colors cotton with a relaxed unisex fit, sizes S-4XL, printed to order. Works as a mom Christmas gift, a white elephant pick, or your own December uniform. See the matching mug and tumbler.",
     "_hook_band": "FUNNY CHRISTMAS SHIRT",
-    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_105_naughty_list_tee.jpg"
+    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_105_naughty_list_tee.jpg",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   },
   {
     "file": "pin_105_naughty_list_tee_v2.jpg",
@@ -54,12 +57,13 @@
     "listing_url": "https://www.etsy.com/listing/4544656844/naughty-list-coordinator-shirt-comfort",
     "_listing_slug": "naughty-list-coordinator-shirt-comfort",
     "_variant": "v2",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "Bay sage green garment-dyed t-shirt shown flat, printed with Official Naughty List Coordinator in red and green.",
     "description": "Naughty list shirt for the person actually running Christmas. Funny Christmas tee in garment-dyed Comfort Colors cotton with a relaxed unisex fit, sizes S-4XL, printed to order. Works as a mom Christmas gift, a white elephant pick, or your own December uniform. See the matching mug and tumbler.",
     "_hook_band": "SARCASTIC HOLIDAY GIFT",
     "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_105_naughty_list_tee_v2.jpg",
-    "_base_pin": "pin_105_naughty_list_tee"
+    "_base_pin": "pin_105_naughty_list_tee",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   },
   {
     "file": "pin_106_naughty_list_mug.jpg",
@@ -70,11 +74,12 @@
     "listing_url": "https://www.etsy.com/listing/4544657298/naughty-list-coordinator-mug-funny",
     "_listing_slug": "naughty-list-coordinator-mug-funny",
     "_variant": "v1",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "White ceramic coffee mug printed with Naughty List Coordinator in red and green, on dark wood with pine and a knit throw.",
     "description": "Naughty list mug for the one keeping score all December. Funny Christmas coffee mug in 11 oz and 15 oz ceramic, dishwasher and microwave safe, printed to order. A stocking stuffer or secret santa gift that survives past January. Matching shirt and tumbler available.",
     "_hook_band": "SARCASTIC CHRISTMAS MUG",
-    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_106_naughty_list_mug.jpg"
+    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_106_naughty_list_mug.jpg",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   },
   {
     "file": "pin_106_naughty_list_mug_v2.jpg",
@@ -85,12 +90,13 @@
     "listing_url": "https://www.etsy.com/listing/4544657298/naughty-list-coordinator-mug-funny",
     "_listing_slug": "naughty-list-coordinator-mug-funny",
     "_variant": "v2",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "White ceramic coffee mug printed with Naughty List Coordinator in red and green, on pale wood with pinecones.",
     "description": "Naughty list mug for the one keeping score all December. Funny Christmas coffee mug in 11 oz and 15 oz ceramic, dishwasher and microwave safe, printed to order. A stocking stuffer or secret santa gift that survives past January. Matching shirt and tumbler available.",
     "_hook_band": "FUNNY COFFEE MUG GIFT",
     "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_106_naughty_list_mug_v2.jpg",
-    "_base_pin": "pin_106_naughty_list_mug"
+    "_base_pin": "pin_106_naughty_list_mug",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   },
   {
     "file": "pin_107_naughty_list_tumbler.jpg",
@@ -101,11 +107,12 @@
     "listing_url": "https://www.etsy.com/listing/4544657124/naughty-list-coordinator-tumbler-20oz",
     "_listing_slug": "naughty-list-coordinator-tumbler-20oz",
     "_variant": "v1",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "Stainless steel 20 oz tumbler with straw printed with Official Naughty List Coordinator in red and green, on dark wood with pine.",
-    "description": "Christmas tumbler with straw for the household's official naughty list coordinator. 20 oz insulated stainless steel, straw and lid included, keeps drinks cold all day. Printed to order \u2014 a funny holiday gift for a teacher, coworker or mom. Matching shirt and mug available.",
+    "description": "Christmas tumbler with straw for the household's official naughty list coordinator. 20 oz insulated stainless steel, straw and lid included, keeps drinks cold all day. Printed to order — a funny holiday gift for a teacher, coworker or mom. Matching shirt and mug available.",
     "_hook_band": "SARCASTIC CHRISTMAS GIFT",
-    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_107_naughty_list_tumbler.jpg"
+    "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_107_naughty_list_tumbler.jpg",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   },
   {
     "file": "pin_107_naughty_list_tumbler_v2.jpg",
@@ -116,11 +123,12 @@
     "listing_url": "https://www.etsy.com/listing/4544657124/naughty-list-coordinator-tumbler-20oz",
     "_listing_slug": "naughty-list-coordinator-tumbler-20oz",
     "_variant": "v2",
-    "weight": 3,
+    "weight": 6,
     "alt_text": "Stainless steel 20 oz tumbler with straw printed with Official Naughty List Coordinator in red and green, on light wood.",
-    "description": "Christmas tumbler with straw for the household's official naughty list coordinator. 20 oz insulated stainless steel, straw and lid included, keeps drinks cold all day. Printed to order \u2014 a funny holiday gift for a teacher, coworker or mom. Matching shirt and mug available.",
+    "description": "Christmas tumbler with straw for the household's official naughty list coordinator. 20 oz insulated stainless steel, straw and lid included, keeps drinks cold all day. Printed to order — a funny holiday gift for a teacher, coworker or mom. Matching shirt and mug available.",
     "_hook_band": "FUNNY CHRISTMAS GIFT IDEA",
     "image_url": "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/pin_107_naughty_list_tumbler_v2.jpg",
-    "_base_pin": "pin_107_naughty_list_tumbler"
+    "_base_pin": "pin_107_naughty_list_tumbler",
+    "_weight_note": "2026-08-02: 3 -> 6 for the Aug-Dec Christmas window. Revisit 2026-12-26."
   }
 ]
