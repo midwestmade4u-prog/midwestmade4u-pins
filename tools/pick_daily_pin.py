@@ -68,7 +68,7 @@ from datetime import date, timezone, datetime
 
 REPO_RAW_BASE = "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/"
 ROTATION_EPOCH = date(2026, 1, 1)
-NUM_SHARDS = 12  # bumped 2026-07-19: shards 10-11 added for the 12 new holiday/back-to-school SKUs
+NUM_SHARDS = 13  # bumped 2026-08-01: shard 12 added for the Christmas POD push (4 SKUs x 2 variants)
 POSTS_PER_DAY = 1  # 2026-08-01: back to 1/day. Ten weeks of data showed raising
                    # volume LOWERED impressions (252 -> 138); volume is not the lever,
                    # and a distribution-limited account posting more looks worse.
