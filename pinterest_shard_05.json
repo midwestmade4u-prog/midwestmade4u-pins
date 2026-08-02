@@ -201,7 +201,8 @@
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_021_flagship_bundle.html",
     "_listing_slug": "theme-park-vacation-planner-itinerary",
     "_variant": "v1",
-    "weight": 3
+    "weight": 2,
+    "_weight_note": "2026-08-02: 3 -> 2. Freed rotation slots for the POD push; these are the Disney/park printables, which have run 10 weeks on Pinterest with 0 outbound clicks. Holiday printables (035-043) and back-to-school (044-046) deliberately left at 3."
   },
   {
     "file": "pin_021_flagship_bundle_v2.jpg",
@@ -214,6 +215,7 @@
     "_listing_slug": "theme-park-vacation-planner-itinerary",
     "_variant": "v2",
     "_base_pin": "pin_021_flagship_bundle",
-    "weight": 3
+    "weight": 2,
+    "_weight_note": "2026-08-02: 3 -> 2. Freed rotation slots for the POD push; these are the Disney/park printables, which have run 10 weeks on Pinterest with 0 outbound clicks. Holiday printables (035-043) and back-to-school (044-046) deliberately left at 3."
   }
 ]

@@ -68,7 +68,7 @@ from datetime import date, timezone, datetime
 
 REPO_RAW_BASE = "https://raw.githubusercontent.com/midwestmade4u-prog/midwestmade4u-pins/main/"
 ROTATION_EPOCH = date(2026, 1, 1)
-NUM_SHARDS = 13  # bumped 2026-08-01: shard 12 added for the Christmas POD push (4 SKUs x 2 variants)
+NUM_SHARDS = 14  # bumped 2026-08-02: shard 13 = the 12 POD listings that had no pins at all (6 tees, 3 mugs, 3 tumblers), 2 variants each
 
 # 2026-08-02: 1 -> 2 posts/day.
 #

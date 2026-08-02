@@ -399,7 +399,9 @@
     "weight": 0,
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_101_midwest_nice_tee.html",
     "_listing_slug": "midwest-nice-shirt-midwest-pride-tee",
-    "_benched": "2026-08-01: creative is stale (old Bella+Canvas photo on the tee; mug and tumbler photos crop the design off) and prices were wrong. Data corrected same day. Restore weight 3 when the Phase 1 replacement pins ship."
+    "_benched": "2026-08-01: creative is stale (old Bella+Canvas photo on the tee; mug and tumbler photos crop the design off) and prices were wrong. Data corrected same day. Restore weight 3 when the Phase 1 replacement pins ship.",
+    "_superseded_by": "pin_113_midwest_nice_tee.jpg",
+    "_superseded_note": "2026-08-02: replaced by the shard 13 rebuild, which fixes the crop-through-the-print defect that benched this pin. Kept at weight 0 rather than deleted so the file and its history stay resolvable; safe to remove once the replacement has been live and verified."
   },
   {
     "file": "pin_102_midwest_nice_mug.jpg",
@@ -411,7 +413,9 @@
     "weight": 0,
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_102_midwest_nice_mug.html",
     "_listing_slug": "midwest-nice-mug-midwest-pride-coffee",
-    "_benched": "2026-08-01: creative is stale (old Bella+Canvas photo on the tee; mug and tumbler photos crop the design off) and prices were wrong. Data corrected same day. Restore weight 3 when the Phase 1 replacement pins ship."
+    "_benched": "2026-08-01: creative is stale (old Bella+Canvas photo on the tee; mug and tumbler photos crop the design off) and prices were wrong. Data corrected same day. Restore weight 3 when the Phase 1 replacement pins ship.",
+    "_superseded_by": "pin_116_midwest_nice_mug.jpg",
+    "_superseded_note": "2026-08-02: replaced by the shard 13 rebuild, which fixes the crop-through-the-print defect that benched this pin. Kept at weight 0 rather than deleted so the file and its history stay resolvable; safe to remove once the replacement has been live and verified."
   },
   {
     "file": "pin_103_midwest_nice_tumbler.jpg",
@@ -423,6 +427,8 @@
     "weight": 0,
     "tracking_url": "https://midwestmade4u-prog.github.io/midwestmade4u-pins/r/pin_103_midwest_nice_tumbler.html",
     "_listing_slug": "midwest-nice-tumbler-20oz-stainless",
-    "_benched": "2026-08-01: creative is stale (old Bella+Canvas photo on the tee; mug and tumbler photos crop the design off) and prices were wrong. Data corrected same day. Restore weight 3 when the Phase 1 replacement pins ship."
+    "_benched": "2026-08-01: creative is stale (old Bella+Canvas photo on the tee; mug and tumbler photos crop the design off) and prices were wrong. Data corrected same day. Restore weight 3 when the Phase 1 replacement pins ship.",
+    "_superseded_by": "pin_119_midwest_nice_tumbler.jpg",
+    "_superseded_note": "2026-08-02: replaced by the shard 13 rebuild, which fixes the crop-through-the-print defect that benched this pin. Kept at weight 0 rather than deleted so the file and its history stay resolvable; safe to remove once the replacement has been live and verified."
   }
 ]
